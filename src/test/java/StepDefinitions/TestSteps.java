@@ -1,9 +1,7 @@
 package StepDefinitions;
 
-import PageObject.HomePage;
 import Utilites.Utility;
 import io.cucumber.java.en.*;
-import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -14,7 +12,6 @@ import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.io.File;
-import java.util.concurrent.TimeUnit;
 
 public class TestSteps {
 
@@ -83,18 +80,11 @@ public class TestSteps {
 
         Utility.pageLoadTimeouts(10);
 
-        //Creating object of an Actions class
-        //Actions action = new Actions(driver);
-
         Thread.sleep(2000);
 
         WebElement thirdDeal = driver.findElement(By.xpath("(//*[@id='twotabsearchtextbox']//following::a/div/img)[3]"));
 
         thirdDeal.click();
-
-
-
-        //action.moveToElement(thirdDeal).perform();
 
     }
 
@@ -119,6 +109,11 @@ public class TestSteps {
         WebDriverWait wait = new WebDriverWait(driver, 20);
         WebElement addCart = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@id='twotabsearchtextbox']//following::input[@id='add-to-cart-button']")));
         addCart.click();
+
+        WebElement eleCart = driver.findElement(By.cssSelector("#huc-v2-order-row-inner a#hlb-view-cart-announce"));
+        eleCart.click();
+        System.out.println(eleCart.getText());
+
 
     }
 

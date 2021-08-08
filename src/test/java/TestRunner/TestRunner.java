@@ -6,20 +6,13 @@ import org.junit.runner.RunWith;
 
 @RunWith(Cucumber.class)
 @CucumberOptions(
-            features = "Features",
-            glue = "StepDefinitions",
-            dryRun = false,
-            tags = "@PrimeDelivery",
-            monochrome = true,
-            plugin = {"pretty","html:test-output"})
-
+        features = "Features",
+        glue = {"StepDefinitions","Hooks"},
+        tags="@sanity",
+        monochrome = true,
+        plugin = {"pretty","html:test-output"})
 
 public class TestRunner {
-
-
-
-
-
 
 
 }
