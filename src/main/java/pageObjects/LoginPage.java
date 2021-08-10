@@ -1,16 +1,20 @@
-package PageObjects;
+package pageObjects;
 
+import driverSetup.BrowserSetup;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
+
+import java.util.concurrent.TimeUnit;
 
 public class LoginPage {
 
     private WebDriver driver;
 
+    private By accountsHome = By.cssSelector(".nav-right #nav-tools a#nav-link-accountList span.nav-icon.nav-arrow");
+    private By homePageSigin = By.cssSelector("#nav-al-signin span.nav-action-inner");
     private By emailId = By.xpath("//*[@id='ap_email']");
     private By continueButton = By.id("continue");
-    private By passwordId = By.id("ap_password");
+    private By passwordId = By.xpath("//*[@type='password']");
     private By signInSubmitId= By.cssSelector("#auth-signin-button");
 
 
@@ -18,21 +22,25 @@ public class LoginPage {
         this.driver= driver;
     }
 
-
     public String getLoginPageTitle(){
 
+        driver.findElement(accountsHome).click();
+     /**   WebElement signInEle = BrowserSetup.getBrowser().findElement(homePageSigin);
+        Actions mouseActions = new Actions(BrowserSetup.getBrowser());
+        mouseActions.moveToElement(signInEle).click(); **/
         return driver.getTitle();
     }
 
     public void enterUserEmailId(String emailAddress){
+        BrowserSetup.getBrowser().manage().timeouts().pageLoadTimeout(10, TimeUnit.SECONDS);
         driver.findElement(emailId).sendKeys(emailAddress);
         driver.findElement(continueButton).click();
     }
 
     public void enterUserPassword(String password){
+        driver.findElement(passwordId).clear();
         driver.findElement(passwordId).sendKeys(password);
-        System.out.println(driver.findElement(signInSubmitId).getText());
-        driver.findElement(continueButton).click();
+       // driver.findElement(continueButton).click();
 
     }
 

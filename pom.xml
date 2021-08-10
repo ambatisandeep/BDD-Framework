@@ -24,14 +24,14 @@
             <groupId>io.cucumber</groupId>
             <artifactId>cucumber-java</artifactId>
             <version>${cucumber.version}</version>
-            <scope>test</scope>
+<!--            <scope>test</scope>-->
         </dependency>
 
         <dependency>
             <groupId>io.cucumber</groupId>
             <artifactId>cucumber-junit</artifactId>
             <version>${cucumber.version}</version>
-            <scope>test</scope>
+<!--            <scope>test</scope>-->
         </dependency>
 
         <!-- https://mvnrepository.com/artifact/org.junit.jupiter/junit-jupiter-api -->
@@ -39,7 +39,7 @@
             <groupId>org.junit.jupiter</groupId>
             <artifactId>junit-jupiter-api</artifactId>
             <version>${junit.version}</version>
-            <scope>test</scope>
+<!--            <scope>test</scope>-->
         </dependency>
 
         <dependency>
@@ -59,7 +59,7 @@
             <groupId>tech.grasshopper</groupId>
             <artifactId>extentreports-cucumber6-adapter</artifactId>
             <version>2.8.2</version>
-            <scope>test</scope>
+<!--            <scope>test</scope>-->
         </dependency>
 
         <!-- https://mvnrepository.com/artifact/org.apache.poi/poi -->
@@ -75,7 +75,12 @@
             <artifactId>poi-ooxml</artifactId>
             <version>4.1.2</version>
         </dependency>
-
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>4.13.1</version>
+<!--            <scope>test</scope>-->
+        </dependency>
     </dependencies>
 
     <build>
@@ -90,19 +95,19 @@
                     <target>${java.version}</target>
                 </configuration>
             </plugin>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-surefire-plugin</artifactId>
-                <version>${maven.surefire.version}</version>
-                <configuration>
-                    <includes>
-                        <include>**/ParallelRun.java</include>
-                    </includes>
-                    <parallel>methods</parallel>
-                    <threadCount>4</threadCount>
-                    <useUnlimitedThreads>false</useUnlimitedThreads>
-                </configuration>
-            </plugin>
+<!--            <plugin>-->
+<!--                <groupId>org.apache.maven.plugins</groupId>-->
+<!--                <artifactId>maven-surefire-plugin</artifactId>-->
+<!--                <version>${maven.surefire.version}</version>-->
+<!--                <configuration>-->
+<!--                    <includes>-->
+<!--                        <include>**/ParallelRun.java</include>-->
+<!--                    </includes>-->
+<!--                    <parallel>methods</parallel>-->
+<!--                    <threadCount>4</threadCount>-->
+<!--                    <useUnlimitedThreads>false</useUnlimitedThreads>-->
+<!--                </configuration>-->
+<!--            </plugin>-->
         </plugins>
     </build>
 

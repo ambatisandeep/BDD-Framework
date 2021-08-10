@@ -1,6 +1,6 @@
-package Utilites;
+package utilites;
 
-import StepDefinitions.TestSteps;
+//import StepDefinitions.TestSteps;
 import org.openqa.selenium.WebDriver;
 
 

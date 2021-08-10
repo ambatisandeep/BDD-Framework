@@ -1,7 +1,7 @@
-package Hooks;
+package hooks;
 
-import DriverSetup.BrowserSetup;
-import Utility.ConfiqReader;
+import driverSetup.BrowserSetup;
+import utilityPackage.ConfiqReader;
 
 import io.cucumber.java.After;
 import io.cucumber.java.Before;

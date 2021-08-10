@@ -1,4 +1,4 @@
-package DriverSetup;
+package driverSetup;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -18,7 +18,6 @@ public class BrowserSetup {
         }else{
             System.out.println("Initialise new browser type");
         }
-
         getBrowser().manage().deleteAllCookies();
         getBrowser().manage().window().maximize();
         return getBrowser();

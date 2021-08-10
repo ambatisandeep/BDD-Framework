@@ -1,5 +1,5 @@
-/home/sandea/IdeaProjects/BDD/src/main/java/DriverSetup/BrowserSetup.java
 /home/sandea/IdeaProjects/BDD/src/main/java/PageObjects/LoginPage.java
 /home/sandea/IdeaProjects/BDD/src/main/java/PageObjects/TodaysDealsPage.java
 /home/sandea/IdeaProjects/BDD/src/main/java/Utility/ConfiqReader.java
 /home/sandea/IdeaProjects/BDD/src/main/java/Utility/utilities.java
+/home/sandea/IdeaProjects/BDD/src/main/java/driverSetup/BrowserSetup.java

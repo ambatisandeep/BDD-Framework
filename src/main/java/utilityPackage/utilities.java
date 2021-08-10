@@ -1,4 +1,4 @@
-package Utility;
+package utilityPackage;
 
 public class utilities {
 
