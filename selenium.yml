@@ -32,7 +32,7 @@ steps:
       sonarQubeRunAnalysis: false
   - task: PublishBuildArtifacts@1
     inputs:
-      PathtoPublish: '$(System.DefaultWorkingDirectory)\\src\\test\\java\\screenShots\\*.png'
+      PathtoPublish: '$(System.DefaultWorkingDirectory)\\src\\test\\java\\screenShots'
       ArtifactName: 'ScreenShots'
       publishLocation: 'Container'
 

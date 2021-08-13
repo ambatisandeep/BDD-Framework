@@ -25,14 +25,11 @@ public class LoginPage {
     public String getLoginPageTitle(){
 
         driver.findElement(accountsHome).click();
-     /**   WebElement signInEle = BrowserSetup.getBrowser().findElement(homePageSigin);
-        Actions mouseActions = new Actions(BrowserSetup.getBrowser());
-        mouseActions.moveToElement(signInEle).click(); **/
         return driver.getTitle();
     }
 
     public void enterUserEmailId(String emailAddress){
-        BrowserSetup.getDriver().manage().timeouts().pageLoadTimeout(10, TimeUnit.SECONDS);
+        driver.manage().timeouts().pageLoadTimeout(10, TimeUnit.SECONDS);
         driver.findElement(emailId).sendKeys(emailAddress);
         driver.findElement(continueButton).click();
     }
@@ -40,7 +37,6 @@ public class LoginPage {
     public void enterUserPassword(String password){
         driver.findElement(passwordId).clear();
         driver.findElement(passwordId).sendKeys(password);
-       // driver.findElement(continueButton).click();
 
     }
 
@@ -48,5 +44,17 @@ public class LoginPage {
         driver.findElement(signInSubmitId).click();
     }
 
+    public TodaysDealsPage doLogin(String email, String pass){
+        driver.manage().timeouts().pageLoadTimeout(10, TimeUnit.SECONDS);
+        driver.findElement(accountsHome).click();
+        driver.findElement(emailId).sendKeys(email);
+        driver.findElement(continueButton).click();
+        driver.findElement(passwordId).clear();
+        driver.findElement(passwordId).sendKeys(pass);
+        driver.findElement(signInSubmitId).click();
+        return new TodaysDealsPage(driver);
+
+
+    }
 
 }

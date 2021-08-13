@@ -30,7 +30,7 @@ public class ApplicationHooks {
         String browserName = prop.getProperty("browser");
         browserSetup = new BrowserSetup();
         driver = browserSetup.setBrowser(browserName);
-    }
+        }
 
     @After(order = 1)
     public void tearDown(Scenario scenario){
